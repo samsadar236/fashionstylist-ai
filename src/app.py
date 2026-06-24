@@ -13,6 +13,16 @@ import base64
 import sys
 from pathlib import Path
 
+# --- CHROMA DB / SQLITE PATCH FOR STREAMLIT CLOUD ---
+# This must happen before any ChromaDB or Streamlit imports!
+try:
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except ImportError:
+    pass # Falls back to standard sqlite3 for your local Windows machine
+# ----------------------------------------------------
+
 import streamlit as st
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
