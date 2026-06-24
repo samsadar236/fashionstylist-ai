@@ -1,5 +1,6 @@
 # Core ML / embeddings
 torch>=2.1
+torchvision>=0.16
 transformers>=4.40
 pillow>=10.0
 
@@ -16,9 +17,5 @@ google-generativeai>=0.7
 # UI
 streamlit>=1.36
 
-# Optional: learned pairwise compatibility scorer (src/compat_model.py)
+# Optional: learned pairwise compatibility scorer
 scikit-learn>=1.3
-
-# NOTE (Windows, no NVIDIA GPU): if `pip install torch` pulls a CUDA build you
-# don't want, install the CPU wheel instead:
-#   pip install torch --index-url https://download.pytorch.org/whl/cpu
