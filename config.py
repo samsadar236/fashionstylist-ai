@@ -5,7 +5,8 @@ Edit DATA_DIR to point at your clone of the ML-TASK repo.
 from pathlib import Path
 
 # --- paths (EDIT) ----------------------------------------------------------
-DATA_DIR = Path("data")                 # contains products.csv, outfits.csv, images/
+# CHANGED FROM "data" TO "dataset" TO BYPASS GIT SUBMODULE BUG
+DATA_DIR = Path("dataset")              # contains products.csv, outfits.csv, images/
 PRODUCTS_CSV = DATA_DIR / "products.csv"
 OUTFITS_CSV = DATA_DIR / "outfits.csv"
 # products.csv 'image' column is already a path relative to DATA_DIR
